@@ -15,9 +15,6 @@ const Detail = () => {
     if (!person) { 
         return (<h1>Loading...</h1>)
     }
-
-    console.log('*** Detail.id', id)
-
     return <h1>{person.name}</h1>
 }
 

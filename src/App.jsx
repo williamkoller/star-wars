@@ -7,7 +7,6 @@ const App = () => {
         <BrowserRouter>
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/detail/">Detail</Link></li>
             </ul>
             <Switch>
                 <Route path="/detail/:id"><Detail /></Route>
