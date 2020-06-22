@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+
+import { doGet } from '../../helpers/ApiHelper'
+
 
 const Detail = () => {
-    return <h1>Detail</h1>
+    const [person, setPerson] = useState(null)
+    const { id } = useParams()
+
+    useEffect(() => {
+        doGet(`/people/${id}`).then(setPerson)
+    }, [id])
+
+    if (!person) { 
+        return (<h1>Loading...</h1>)
+    }
+
+    console.log('*** Detail.id', id)
+
+    return <h1>{person.name}</h1>
 }
 
 export default Detail
